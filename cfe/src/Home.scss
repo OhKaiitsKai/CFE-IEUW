@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); // Importa una fuente si es necesario
+
+$primary-color: #07905c;
+$background-color: white;
+$button-margin: 10px;
+
+@mixin tablet {
+  @media screen and (max-width: 915px) and (min-width: 612px) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media screen and (min-width: 915px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: 612px) {
+    @content;
+  }
+}
+
+.principalHeader {
+  background-color: $background-color;
+  display: flex;
+  justify-content: space-between;
+
+  .headerContainer {
+    color: $primary-color;
+    display: flex;
+    align-items: center;
+
+    .logoh {
+      img {
+        width: 200px;
+        height: auto;
+        position: relative;
+      }
+    }
+
+    button {
+      color: $primary-color;
+      margin: $button-margin;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      font-size: 16px;
+      
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &.LogInbtn {
+        // Personaliza estilos específicos para el botón de inicio de sesión
+      }
+
+      &.SignUpbtn {
+        // Personaliza estilos específicos para el botón de crear una cuenta
+      }
+    }
+  }
+}
