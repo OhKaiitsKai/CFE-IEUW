@@ -13,7 +13,7 @@ const Headers = () => {
         <span className="logohs">
           <img src={CFElogo} alt="" />
         </span>
-        <span className="userL">Intentp</span>
+        <span className="userL">Intento</span>
         <button className="SignUpbtn"> Cerrar sesión </button>
       </div>
     </div>

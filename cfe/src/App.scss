@@ -204,138 +204,220 @@
 // LANDINGPAGE
 .principalHeader {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: white;
-  align-items: center;
-  justify-content: flex;
-
+  background-color: #ffffff;
+  /* Otros estilos para el contenedor principal del Header */
+  
   .headerContainer {
-    border-bottom: 1px solid #009929;
-    border-radius: 10px;
-    padding-bottom: 10px;
-    width: 100%;
-    height: 0%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    /* Estilos para el contenedor interno del Header */
 
     .logoh {
-      height: auto;
-      width: auto;
-      transform: scale(0.6);
-      margin-left: auto;
-    margin-right: auto;
+      margin-left: 20px;
+      img {
+        width: 120px; /* Ajusta el tamaño del logo según tus necesidades */
+        height: auto;
+        /* Otros estilos para el logo */
+      }
     }
 
-    .LogInbtn {
-      background-color: white;
-      color: #5ccb5f;
-      border: none;
-      font-size: 20px;
+    .header-nav {
+      list-style: none;
+      padding: 8px 16px;
+      margin-top: 40px;
+      margin-left: 12px;
       display: flex;
-      align-items: baseline;
-      cursor: pointer;
-      margin-left: 840px;
-      margin-top: 60px;
-      margin-right: 10px;
+      justify-content: space-around;
+      color: #07905c;
 
-      @include tablet {
-        margin-left: 440px;
+      .menu-icon {
+        display: none;
       }
 
-      @include mobile {
-        margin-left: 240px;
-      }
-    }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: space-around;
 
-    .SignUpbtn {
-      background-color: #5ccb5f;
-      font-weight: bold;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      font-size: 20px;
-      display: flex;
-      align-items: baseline;
-      cursor: pointer;
-      margin-right: auto;
-      margin-left: auto;
-      margin-top: 60px;
-      margin-bottom: auto;
-
-      @include tablet {
-        margin-top: 20px;
-      }
-
-      @include mobile {
-        margin-top: 10px;
+        .headernav-item {
+          padding: 10px;
+          cursor: pointer;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
       }
     }
-    @include tablet {
-      flex-wrap: wrap;
-      justify-content: center;
-  
-      .logoh {
-        margin: 10px auto;
-      }
-  
+
+    .LogSignbtns {
       .LogInbtn,
       .SignUpbtn {
-        margin: 10px;
+        padding: 8px 16px;
+        margin-top: 40px;
+        margin-left: 12px;
+        cursor: pointer;
+        border-radius: 10px;
+        /* Estilos comunes para ambos botones */
       }
-    }
-  
-    @include mobile {
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-  
-      .logoh {
-        margin: 10px auto;
+
+      .LogInbtn {
+        color: #07905c;
+        background-color: white; /* Color para el botón LogIn */
+        border: 1px solid #07905c;
       }
-  
-      .LogInbtn,
+
       .SignUpbtn {
-        margin: 10px;
+        color: white;
+        background-color: #07905c; /* Color para el botón SignUp */
+        border: none;
       }
     }
   }
+
+  /* Estilos para dispositivos móviles */
+@include mobile {
+  .headerContainer {
+    .header-nav {
+      .menu-icon {
+        display: flex;
+        position: relative;
+        height: 30px;
+        width: 30px;
+        cursor: pointer;
+        z-index: 20;
+      }
+    }
+
+    .header-nav {
+      ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        background-color: #ffffff; /* Color de fondo del menú */
+        padding: 10px; /* Espaciado interno del menú */
+        box-shadow: 0px 4px 6px rgba(7, 144, 92, 0.4); /* Sombra para el menú */
+        z-index: 15; /* Asegura que el menú esté encima de otros elementos */
+        top: 100%; /* Posiciona el menú debajo del ícono */
+        left: 50%; /* Centra horizontalmente el menú */
+        transform: translateX(-50%);
+        border-radius: 10px;
+        /* Estilos para ocultar la lista en dispositivos móviles */
+      }
+      li{
+      position: relative;
+      padding-bottom: 10px; /* Ajusta el espacio para la franja */
+      &:not(:last-child) {
+        border-bottom: 1px solid #07905c; /* Color y estilo de la franja */
+      }
+      }
+
+      ul.show-menu {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100px;
+        /* Estilos para mostrar la lista cuando se activa la clase show-menu en dispositivos móviles */
+      }
+    }
+  }
+  .LogSignbtns{
+    .SignUpbtn{
+      display: none;
+    }
+    .LogInbtn{
+      color:#07905c;
+    }
+  }
+}
+@include tablet {
+  .headerContainer {
+    .header-nav {
+      .menu-icon {
+        display: flex;
+        position: relative;
+        height: 30px;
+        width: 30px;
+        cursor: pointer;
+        z-index: 20;
+      }
+    }
+
+    .header-nav {
+      ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        background-color: #ffffff; /* Color de fondo del menú */
+        padding: 10px; /* Espaciado interno del menú */
+        box-shadow: 0px 4px 6px rgba(7, 144, 92, 0.4); /* Sombra para el menú */
+        z-index: 15; /* Asegura que el menú esté encima de otros elementos */
+        top: 100%; /* Posiciona el menú debajo del ícono */
+        left: 50%; /* Centra horizontalmente el menú */
+        transform: translateX(-50%);
+        border-radius: 10px;
+        /* Estilos para ocultar la lista en dispositivos móviles */
+      }
+      li{
+      position: relative;
+      padding-bottom: 10px; /* Ajusta el espacio para la franja */
+      &:not(:last-child) {
+        border-bottom: 1px solid #07905c; /* Color y estilo de la franja */
+      }
+      }
+
+      ul.show-menu {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100px;
+        /* Estilos para mostrar la lista cuando se activa la clase show-menu en dispositivos móviles */
+      }
+    }
+  }
+  .LogSignbtns{
+    .SignUpbtn{
+      display: none;
+    }
+    .LogInbtn{
+      color:#07905c;
+    }
+  }
+}
 }
 
+
+//Navbar
 .navbar {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #5ccb5f;
-  padding: 6px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 5px;
+  background-color: #07905c; 
+  padding: 20px; /* Ajusta el padding según tu diseño */
+  border-radius: 10px;
 
-  .nav-menu ul {
-    list-style-type: none;
-    color: white;
-    margin-left: 60px;
-    padding: 0;
-    display: flex;
-    justify-content: flex-end;
-    gap: 20px;
-  }
+  .nav-menu {
+    ul {
+      list-style:none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: space-around;
 
-  .nav-item {
-    cursor: pointer;
-    font-size: 20px;
+      .nav-item {
+        padding: 10px;
+        color: white;
+        cursor: pointer;
 
-    @include tablet {
-      font-size: 18px;
-    }
-
-    @include mobile {
-      font-size: 16px;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
-
 }
 
+//Features
 .features {
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
@@ -377,7 +459,9 @@
   }
 
   @include mobile {
+    //display: flex;
     flex-direction: column;
+    align-items: center;
 
     .feature {
       width: 250px;
@@ -426,118 +510,10 @@
 
 .footer {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #5ccb5f;
+  background-color: #07905c;
   padding: 20px;
   color: white;
   text-align: center;
   border-radius: 5px;
 }
 
-.principalHeaders {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: white;
-  align-items: center;
-  justify-content: flex;
-
-  .headersContainer {
-    border-bottom: 1px solid #009929;
-    border-radius: 10px;
-    padding-bottom: 10px;
-    width: 100%;
-    height: 0%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-
-    .logohs {
-      height: auto;
-      width: auto;
-      transform: scale(0.6);
-      margin-left:auto;
-      margin-right: 916px;
-    }
-
-    span {
-      margin-right: auto;
-      margin-left: auto;
-      margin-top: 15px;
-      font-size: 20px;
-      color: #5ccb5f;
-    }
-
-    .SignUpbtn {
-      background-color: #5ccb5f;
-      font-weight: bold;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      font-size: 20px;
-      display: flex;
-      align-items: baseline;
-      cursor: pointer;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 60px;
-      margin-bottom: auto;
-
-      @include tablet {
-        margin-top: 20px;
-      }
-
-      @include mobile {
-        margin-top: 10px;
-      }
-    }
-
-    button {
-      background-color: white;
-      color: #5ccb5f;
-      border: none;
-      font-size: 20px;
-      display: flex;
-      align-items: baseline;
-      cursor: pointer;
-      margin-left: auto;
-      margin-top: 60px;
-      margin-right: 10px;
-
-      @include tablet {
-        margin-left: 440px;
-      }
-
-      @include mobile {
-        margin-left: 240px;
-      }
-    }
-
-    @include tablet {
-      flex-wrap: wrap;
-      justify-content: center;
-
-      .logohs {
-        margin: 10px auto;
-      }
-
-      span,
-      button {
-        margin: 10px;
-      }
-    }
-
-    @include mobile {
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-
-      .logohs {
-        margin: 10px auto;
-      }
-
-      span,
-      button {
-        margin: 10px;
-      }
-    }
-  }
-}

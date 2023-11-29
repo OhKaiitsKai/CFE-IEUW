@@ -10,7 +10,7 @@ const Landing = () => {
     return (
       <>
         <Header />
-        <Navbar />
+        
         <Features />
         <Testimonials />
         <Footer />
