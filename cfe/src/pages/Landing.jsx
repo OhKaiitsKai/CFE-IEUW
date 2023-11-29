@@ -1,8 +1,9 @@
 import React from "react";
 import Header from "../components/Header"
-import Navbar from "../components/Navbar";
+import Carousel from "../components/Carousel";
 import Features from "../components/Features";
-import Footer from "../components/Footer"
+import Prefooter from "../components/Prefooter";
+import Footer from "../components/Footer";
 import Testimonials from "../components/Testimonials";
 
 const Landing = () => {
@@ -10,9 +11,10 @@ const Landing = () => {
     return (
       <>
         <Header />
-        
+        <Carousel />
         <Features />
         <Testimonials />
+        <Prefooter />
         <Footer />
       </>
     );

@@ -200,8 +200,8 @@
   }
 }
 
-//LANDING
-// LANDINGPAGE
+//LANDING PAGE
+//Header.jsx
 .principalHeader {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #ffffff;
@@ -388,7 +388,56 @@
 }
 }
 
+//@import 'styles.css';
+//Carousel
+.carousel {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  .control {
+    padding: 8px 16px;
+    margin: 0 10px;
+    background-color: #ccc;
+    border: none;
+    cursor: pointer;
+
+    &.prev {
+      margin-left: 0;
+    }
+
+    &.next {
+      margin-right: 0;
+    }
+  }
+
+  .viewport {
+    width: 80%;
+    overflow: hidden;
+    position: relative;
+    margin: 20px 0;
+
+    .carousel-list {
+      display: flex;
+      transition: transform 0.5s ease; /* Transición suave al cambiar de elemento */
+
+      .carousel-item {
+        flex: 0 0 100%;
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+        border: 1px solid #ccc;
+        background-color: #f8f8f8;
+        margin-right: 10px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
 //Navbar
 .navbar {
   font-family: Arial, Helvetica, sans-serif;
@@ -506,8 +555,119 @@
     }
   }
 }
+//Prefooter
+.prefooter {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+
+  &__info {
+    flex: 1;
+    padding-right: 20px;
+    text-align: left;
+
+    h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+
+    h4 {
+      font-size: 18px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    .prefooter__downloads {
+      // Estilos para la sección de descargas si es necesario
+    }
+  }
+
+  &__social {
+    flex: 1;
+    padding-left: 20px;
+    text-align: right;
+
+    h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .prefooter__social-icons {
+      // Estilos para los íconos de redes sociales
+    }
+  }
+
+  &__legal {
+    margin-top: 20px;
+
+    h4 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-bottom: 5px;
+
+        a {
+          text-decoration: none;
+          color: #333;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: #00f;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Estilos específicos para la sección de descargas
+.prefooter__downloads {
+  p {
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  .prefooter__download-icons {
+    img {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+  }
+}
+
+// Estilos específicos para los íconos de redes sociales
+.prefooter__social-icons {
+  font-size: 24px;
+
+  svg {
+    margin-right: 10px;
+    color: #333;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #00f;
+    }
+  }
+}
 
 
+//Footer
 .footer {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #07905c;
