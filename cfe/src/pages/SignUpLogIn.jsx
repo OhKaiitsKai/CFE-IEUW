@@ -1,66 +1,58 @@
-import React, { useState, useRef } from "react";
-import CFElogo3 from "../img/CFE3.jpeg";
+import React from "react";
+import * as Components from '../components/Components';
 
 const SignUpLogIn = () => {
-  const [showLogin, setShowLogin] = useState(true);
-  const formContainer2Ref = useRef(null);
+  const [signIn, toggle] = React.useState(true);
+  return(
+      <Components.Container>
+          <Components.SignUpContainer signinIn={signIn}>
+              <Components.Form>
+                  <Components.Title>Crear Cuenta</Components.Title>
+                  <Components.Input type='text' placeholder='Nombre' />
+                  <Components.Input type='email' placeholder='Correo electrónico' />
+                  <Components.Input type='password' placeholder='Contraseña' />
+                  <Components.Button>Crear</Components.Button>
+              </Components.Form>
+          </Components.SignUpContainer>
 
-  const toggleForm = () => {
-    setShowLogin(!showLogin);
-    // Desplazar hacia el formContainer2 cuando se haga clic en "Crea una cuenta"
-    if (!showLogin && formContainer2Ref.current) {
-      formContainer2Ref.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+          <Components.SignInContainer signinIn={signIn}>
+               <Components.Form>
+                   <Components.Title>Inicio de sesión</Components.Title>
+                   <Components.Input type='email' placeholder='Correo electrónico' />
+                   <Components.Input type='password' placeholder='Contraseña' />
+                   <Components.Anchor href='#'>¿Olvidaste tu contraseña?</Components.Anchor>
+                   <Components.Button>Iniciar sesión</Components.Button>
+               </Components.Form>
+          </Components.SignInContainer>
 
-  return (
-    <>
-      <div className={`formContainer ${showLogin ? "transition" : "hidden"}`}>
-        <div className="formWrapper">
-          <span className="logo">
-            <img src={CFElogo3} alt="" />
-          </span>
-          <span className="titleforAcc">Inicio de sesión</span>
-          <form action="#">
-            <input required type="email" placeholder="Correo electrónico" />
-            <input required type="password" placeholder="Contraseña" />
-            <button>Iniciar sesión</button>
-            <p>
-              ¿No tienes una cuenta?
-              <a href="#" className="signUp-link" onClick={toggleForm}>
-                Crea una cuenta
-              </a>
-            </p>
-          </form>
-        </div>
-      </div>
+          <Components.OverlayContainer signinIn={signIn}>
+              <Components.Overlay signinIn={signIn}>
 
-      <div
-        ref={formContainer2Ref}
-        className={`formContainer2 ${showLogin ? "hidden" : "transition"}`}
-      >
-        <div className="formWrapper2">
-          <span className="logo">
-            <img src={CFElogo3} alt="" />
-          </span>
-          <span className="titleforAcc">Crea una cuenta</span>
-          <form action="#">
-            <input required type="firstName" placeholder="Nombre" />
-            <input required type="lastName" placeholder="Apellido" />
-            <input required type="email" placeholder="Correo electrónico" />
-            <input required type="password" placeholder="Contraseña" />
-            <button>Registrarse</button>
-            <p>
-              ¿Ya tienes una cuenta?
-              <a href="#" className="logIn-link" onClick={toggleForm}>
-                Inicia sesión
-              </a>
-            </p>
-          </form>
-        </div>
-      </div>
-    </>
-  );
+              <Components.LeftOverlayPanel signinIn={signIn}>
+                  <Components.Title>¡Bienvenido a CFE!</Components.Title>
+                  <Components.Paragraph>
+                      Si ya tienes una cuenta inicia sesión para ver tus últimos movimientos.
+                  </Components.Paragraph>
+                  <Components.GhostButton onClick={() => toggle(true)}>
+                      Iniciar sesión
+                  </Components.GhostButton>
+                  </Components.LeftOverlayPanel>
+
+                  <Components.RightOverlayPanel signinIn={signIn}>
+                    <Components.Title>CFE</Components.Title>
+                    <Components.Paragraph>
+                        ¡Regístrate para consultar y pagar tus recibos!
+                    </Components.Paragraph>
+                        <Components.GhostButton onClick={() => toggle(false)}>
+                            Crear cuenta
+                        </Components.GhostButton> 
+                  </Components.RightOverlayPanel>
+
+              </Components.Overlay>
+          </Components.OverlayContainer>
+
+      </Components.Container>
+  )
 };
 
 export default SignUpLogIn;
