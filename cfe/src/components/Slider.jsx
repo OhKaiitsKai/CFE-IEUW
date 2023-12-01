@@ -16,7 +16,7 @@ const Slider = () => {
         setCurrentIndex((prevIndex) =>
           prevIndex === slides.length - 1 ? 0 : prevIndex + 1
         );
-      }, 3000); // Cambiar cada 3 segundos (3000ms)
+      }, 5000); // Cambiar cada 5 segundos (5000ms)
   
       return () => clearInterval(interval);
     }, [slides.length]);

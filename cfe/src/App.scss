@@ -234,6 +234,15 @@
       object-fit: cover; /* Para ajustar la imagen sin deformarla */
     }
   }
+  @include mobile { /* Consulta de medios para pantallas más pequeñas, por ejemplo, dispositivos móviles */
+    width: 100%; 
+    height: auto; /* Cambiar la altura del slider a 'auto' para ajustarse al contenido */
+     /* Eliminar el borde en dispositivos móviles o ajustarlo según desees */
+  }
+  @include tablet{
+    width: 100%;
+    height: auto;
+  }
 }
 
 //Carousel
