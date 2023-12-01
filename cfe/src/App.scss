@@ -16,7 +16,7 @@
     }
   }
 
-  @import 'styles.css';
+
 
 
 //LANDING PAGE
@@ -207,7 +207,35 @@
 }
 }
 
-//@import 'styles.css';
+//Slider
+.slider {
+  width: 1460px; /* Ancho del slider */
+  height: 380px; /* Altura del slider */
+  overflow: hidden;
+  margin: 0 auto; /* Centrar el slider horizontalmente */
+  border-radius: 5px;
+
+  .slides-container {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%; /* Asegurar que el contenedor de slides ocupe todo el ancho */
+    height: 100%; /* Asegurar que el contenedor de slides ocupe toda la altura */
+  }
+
+  .slide {
+    flex: 0 0 100%;
+    max-width: 100%;
+    overflow: hidden;
+    height: 100%; /* Asegurar que cada slide ocupe toda la altura */
+
+    img {
+      width: 100%;
+      height: 100%; /* Asegurar que la imagen ocupe toda la altura */
+      object-fit: cover; /* Para ajustar la imagen sin deformarla */
+    }
+  }
+}
+
 //Carousel
 .carousel {
   width: 100%;
@@ -376,111 +404,37 @@
 }
 //Prefooter
 .prefooter {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-  background-color: #f0f0f0;
-  font-family: Arial, sans-serif;
-
-  &__info {
-    flex: 1;
-    padding-right: 20px;
-    text-align: left;
-
-    h3 {
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 14px;
-      line-height: 1.5;
-      margin-bottom: 8px;
-    }
-
-    h4 {
-      font-size: 18px;
-      margin-top: 20px;
-      margin-bottom: 10px;
-    }
-
-    .prefooter__downloads {
-      // Estilos para la sección de descargas si es necesario
-    }
-  }
-
-  &__social {
-    flex: 1;
-    padding-left: 20px;
-    text-align: right;
-
-    h3 {
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-
-    .prefooter__social-icons {
-      // Estilos para los íconos de redes sociales
-    }
-  }
-
-  &__legal {
-    margin-top: 20px;
-
-    h4 {
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-
-      li {
-        margin-bottom: 5px;
-
-        a {
-          text-decoration: none;
-          color: #333;
-          transition: color 0.3s ease;
-
+  background-color:  #757575;
+  color: #fff;
+  padding: 20px 0;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  .prefooter__columns {
+    display: flex;
+    justify-content: space-around;
+    .prefooter__column {
+      flex: 1;
+      padding: 0 20px;
+      h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+      img {
+        width: 130px; /* Ajusta el ancho de la imagen */
+        height: auto;
+        margin-bottom: 15px; /* Espacio entre la imagen y la lista */
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        li {
+          list-style: none;
+          margin-bottom: 5px;
           &:hover {
-            color: #00f;
+            text-decoration: underline;
           }
         }
       }
-    }
-  }
-}
-
-// Estilos específicos para la sección de descargas
-.prefooter__downloads {
-  p {
-    font-weight: bold;
-    margin-bottom: 8px;
-  }
-
-  .prefooter__download-icons {
-    img {
-      width: 40px;
-      height: 40px;
-      margin-right: 10px;
-    }
-  }
-}
-
-// Estilos específicos para los íconos de redes sociales
-.prefooter__social-icons {
-  font-size: 24px;
-
-  svg {
-    margin-right: 10px;
-    color: #333;
-    transition: color 0.3s ease;
-
-    &:hover {
-      color: #00f;
     }
   }
 }
@@ -493,6 +447,7 @@
   padding: 20px;
   color: white;
   text-align: center;
-  border-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 

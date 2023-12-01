@@ -1,9 +1,12 @@
 import React from "react";
 import * as Components from '../components/Components';
+import AppWrapper from "../components/AppWrapper";
 
 const SignUpLogIn = () => {
   const [signIn, toggle] = React.useState(true);
   return(
+    <AppWrapper>
+     <Components.thebody>
       <Components.Container>
           <Components.SignUpContainer signinIn={signIn}>
               <Components.Form>
@@ -52,6 +55,8 @@ const SignUpLogIn = () => {
           </Components.OverlayContainer>
 
       </Components.Container>
+      </Components.thebody>
+      </AppWrapper>
   )
 };
 

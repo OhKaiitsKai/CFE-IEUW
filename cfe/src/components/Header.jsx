@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import CFElogo3 from "../img/CFE3.jpeg";
 import Menubar from "../img/menu.png";
 import "../App.scss";
+import { useNavigate, Link } from "react-router-dom";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);

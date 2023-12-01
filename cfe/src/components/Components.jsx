@@ -1,6 +1,19 @@
-import styled, {css} from 'styled-components';
+import styled from 'styled-components';
 const mobileMaxWidth = '612px';
 
+export const SignLog = styled.div`
+box-sizing: border-box;
+`;
+export const thebody = styled.div`
+background: #f6f5f7;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-family: Arial, Helvetica, sans-serif;
+	height: 100vh;
+	margin: -20px 0 50px;
+`;
 export const Container = styled.div`
   background-color: #fff;
   border-radius: 10px;
@@ -66,7 +79,7 @@ export const Form = styled.form`
 export const Title = styled.h1`
   font-weight: bold;
   margin: 0;
-  font-size: 24px; /* Adjust the font size as needed */
+  font-size: 24px; 
   @media (max-width: ${mobileMaxWidth}) {
     font-size: 22px;
   }
@@ -106,7 +119,7 @@ export const Button = styled.button`
 
   @media (max-width: ${mobileMaxWidth}) {
     padding: 10px 30px;
-    font-size: 10px; /* Adjust the font size for mobile */
+    font-size: 10px; 
   }
 `;
 export const GhostButton = styled(Button)`

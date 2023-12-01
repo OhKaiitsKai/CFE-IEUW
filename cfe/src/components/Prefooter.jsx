@@ -1,49 +1,46 @@
 import React from "react";
-import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
-import AppleStore from '../img/applestore.png';
-import GooglePlay from '../img/gplay.png';
+//import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
+import CFElogo1 from "../img/CFE1.png";
+//import AppleStore from '../img/applestore.png';
+//import GooglePlay from '../img/gplay.png';
 import "../App.scss";
 
 const Prefooter = () => {
-    return (
-      <div className="prefooter">
-        <div className="prefooter__info">
-          <h3>CFE</h3>
-          <p>
-            Oficinas Nacionales: <br />
-            Av. Paseo de la Reforma 164, <br />
-            Col. Juárez, C.P. 06600, <br />
-            Ciudad de México. México
-          </p>
-          <p>Contacto: 55 5229 4400</p>
-          <h4>ATENCIÓN AL CLIENTE:</h4>
-          <p>MARCA 071</p>
-          <div className="prefooter__downloads">
-            <p>Descargas:</p>
-            <div className="prefooter__download-icons">
-               <img src={AppleStore} alt="Apple Store" /> 
-               <img src={GooglePlay} alt="Google Play Store" /> 
-            </div>
-          </div>
+  return (
+    <footer className="prefooter">
+      <div className="prefooter__columns">
+        <div className="prefooter__column">
+          <img src={CFElogo1} alt="CFE"/>
+          
         </div>
-        <div className="prefooter__social">
-          <h3>Síguenos en redes sociales:</h3>
-          <div className="prefooter__social-icons">
-            <FaFacebook />
-            <FaTwitter />
-            <FaInstagram />
-            {/* Agrega más íconos si es necesario */}
-          </div>
-        </div>
-        <div className="prefooter__legal">
-          <h4>Legal:</h4>
+        <div className="prefooter__column">
+          <h3>Columna 2</h3>
           <ul>
-            <li><a href="#">Aviso de privacidad</a></li>
-            <li><a href="#">Términos y condiciones</a></li>
+            <li>Enlace 4</li>
+            <li>Enlace 5</li>
+            <li>Enlace 6</li>
+          </ul>
+        </div>
+        <div className="prefooter__column">
+          <h3>Columna 3</h3>
+          <ul>
+            <li>Enlace 7</li>
+            <li>Enlace 8</li>
+            <li>Enlace 9</li>
+          </ul>
+        </div>
+        <div className="prefooter__column">
+          <h3>Columna 4</h3>
+          <ul>
+            <li>Enlace 10</li>
+            <li>Enlace 11</li>
+            <li>Enlace 12</li>
           </ul>
         </div>
       </div>
-    );
+    </footer>
+  );
+    
   };
   
   export default Prefooter;
