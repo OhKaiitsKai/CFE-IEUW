@@ -634,7 +634,7 @@ p {
 //Acerca
 .cfe-banner{
   .cfe-acerca{
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 30px;
   color: whitesmoke; /* Color corregido */
   background-color: #07905c;
@@ -749,9 +749,24 @@ p {
 //Servicios
 .accordions-container {
   font-family: Arial, Helvetica, sans-serif;
+  .accordions-Servicios{
+    background: #07905c;
+    color: whitesmoke;
+    border-radius: 10px;
+    justify-content: space-around;
+    font-size: 30px;
+
+    @include tablet{
+      font-size: 28px;
+    }
+    @include mobile{
+      font-size: 28px;
+    }
+  }
   .accordion {
-    border: 1px solid #ccc;
+    border: none;
     margin-bottom: 10px;
+   // border-radius: 4px;
 
     .accordion-header {
       display: flex;
@@ -760,9 +775,12 @@ p {
       padding: 10px;
       cursor: pointer;
       background-color: #f5f5f5;
+      border-radius: 8px;
 
-      h2 {
+      .accordion-title {
+        font-size: 24px;
         margin: 0;
+        color: #5ccb5f;
       }
 
       .icon {
@@ -778,7 +796,10 @@ p {
 
     .accordion-content {
       padding: 10px;
-      border-top: 1px solid #ccc;
+      border-left: 1px solid #ccc;
+      border-right: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      border-radius: 8px;
     }
   }
 }
