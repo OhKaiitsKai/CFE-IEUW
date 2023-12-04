@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "../App.scss";
-import CFElogo1 from "../img/CFE1.png";
-import CFElogo3 from "../img/CFE3.jpeg";
+import slideri4 from "../img/slider4.jpg";
+import slideri5 from "../img/slider5.jpg";
+import slideri6 from "../img/slider6.jpg";
 
 const Slider = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const slides = [
-      'https://via.placeholder.com/400x200/FF0000/FFFFFF',
-      'https://via.placeholder.com/400x200/00FF00/FFFFFF',
-      'https://via.placeholder.com/400x200/0000FF/FFFFFF',
+      slideri4, // Reemplazar con la ruta correcta de tu imagen
+      slideri5, // Reemplazar con la ruta correcta de tu imagen
+      slideri6, // Reemplazar con la ruta correcta de tu imagen
     ];
   
     useEffect(() => {

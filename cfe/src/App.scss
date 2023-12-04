@@ -413,7 +413,7 @@
 }
 //Prefooter
 .prefooter {
-  background-color:  #757575;
+  background-color: #757575;
   color: #fff;
   padding: 20px 0;
   border-top-right-radius: 5px;
@@ -429,9 +429,9 @@
         margin-bottom: 10px;
       }
       img {
-        width: 130px; /* Ajusta el ancho de la imagen */
+        width: 130px;
         height: auto;
-        margin-bottom: 15px; /* Espacio entre la imagen y la lista */
+        margin-bottom: 15px;
       }
       ul {
         list-style: none;
@@ -448,6 +448,36 @@
   }
 }
 
+@include mobile {
+  .prefooter {
+    .prefooter__columns {
+      flex-direction: column;
+      .prefooter__column {
+        width: 100%;
+        padding: 10px 0;
+        text-align: center;
+        img {
+          width: 100px;
+        }
+        h3 {
+          font-size: 16px;
+          margin-bottom: 8px;
+        }
+      }
+    }
+  }
+}
+
+@include tablet {
+  .prefooter {
+    .prefooter__columns {
+      .prefooter__column {
+        padding: 0 10px;
+      }
+    }
+  }
+}
+
 
 //Footer
 .footer {
@@ -459,4 +489,245 @@
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
 }
+
+//Simulador
+.Simulador {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  color: whitesmoke; /* Color corregido */
+  background-color: #07905c;
+  justify-content: space-between;
+  border-radius: 5px;
+  align-items: center;
+  /* Otros estilos para el encabezado o título */
+}
+
+.SimuladorDesc {
+  font-size: 22px;
+  color: #333; /* Color corregido */
+  /* Otros estilos para la descripción */
+}
+
+.Formulario {
+  border: solid 2px #5ccb5f;
+  border-radius: 5px;
+  margin-top: 20px; /* Agregado margen arriba para separación */
+}
+
+.Consumo,
+.TipoTarifa {
+  font-size: 22px;
+  margin-bottom: 15px; /* Agregado margen abajo para separación */
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="number"],
+select {
+  //width: 100%;
+  padding: 6px;
+  margin-right: 2px;
+  font-size: 22px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.Costo,
+.IVA,
+.Total {
+  font-size: 22px;
+  color: #333;
+  margin-top: 20px; /* Agregado margen arriba para separación */
+}
+
+//Localización
+.Mapita {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px; /* Tamaño de fuente ajustado */
+  color: #333; /* Color de texto */
+
+  @include tablet {
+    font-size: 14px; /* Cambio de tamaño de fuente para tabletas */
+  }
+
+  @include mobile {
+    font-size: 12px; /* Cambio de tamaño de fuente para dispositivos móviles */
+  }
+}
+
+.Encuentra {
+  font-size: 30px; /* Tamaño de fuente para el encabezado */
+  color: whitesmoke; /* Color del encabezado */
+  background-color: #07905c;
+  border-radius: 5px;
+
+  @include tablet {
+    font-size: 28px; /* Cambio de tamaño de fuente para tabletas */
+  }
+
+  @include mobile {
+    font-size: 28px; /* Cambio de tamaño de fuente para dispositivos móviles */
+  }
+}
+
+.DatosMapa {
+  font-size: 18px; /* Tamaño de fuente para los datos del mapa */
+  margin-top: 20px; /* Margen superior */
+  @include tablet {
+    font-size: 16px; /* Cambio de tamaño de fuente para tabletas */
+  }
+
+  @include mobile {
+    font-size: 16px; /* Cambio de tamaño de fuente para dispositivos móviles */
+  }
+}
+
+.CFEcerca {
+  font-size: 24px; /* Tamaño de fuente para el nombre del CFE cercano */
+}
+
+.NombreCFE,
+.DistanciaCFE {
+  font-size: 18px; /* Tamaño de fuente para el nombre y distancia del CFE */
+  color: #333; /* Color de texto */
+  @include tablet {
+    font-size: 18px; /* Cambio de tamaño de fuente para tabletas */
+  }
+
+  @include mobile {
+    font-size: 16px; /* Cambio de tamaño de fuente para dispositivos móviles */
+  }
+}
+
+.Encontrar {
+  padding: 8px 16px; /* Ajuste del relleno del botón */
+  font-size: 14px; /* Tamaño de fuente para el botón */
+  background-color: #07905c; /* Color de fondo del botón */
+  color: white; /* Color de texto del botón */
+  border: none; /* Eliminación del borde del botón */
+  border-radius: 10px; /* Ajuste del radio del borde */
+  cursor: pointer; /* Cambio del cursor al pasar sobre el botón */
+  margin-top: 10px;
+  margin-bottom: 12px; /* Margen inferior para separación */
+  @include tablet {
+    font-size: 14px; /* Cambio de tamaño de fuente para tabletas */
+  }
+
+  @include mobile {
+    font-size: 14px; /* Cambio de tamaño de fuente para dispositivos móviles */
+  }
+}
+
+#map {
+  width: 100%;
+  height: 400px;
+  margin-top: 20px; /* Margen superior para el mapa */
+}
+
+p {
+  margin: 0; /* Eliminación del margen predeterminado de los párrafos */
+}
+
+//Acerca
+.cfe-widget {
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 500px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+
+  .cfe-header {
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+
+    h2 {
+      font-size: 24px;
+      margin: 0;
+    }
+
+    p {
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    .dropdown-btn {
+      background: none;
+      border: none;
+      color: #ffffff;
+      cursor: pointer;
+      position: relative;
+      display: block;
+      margin: 0 auto;
+      padding: 8px 16px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      z-index: 1;
+
+      &.open {
+        background-color: #fff;
+        color: #07905c;
+      }
+    }
+  }
+
+  .cfe-content {
+    display: none;
+    padding: 20px;
+    position: relative;
+    background-color: #fff;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 0;
+
+    p {
+      font-size: 16px;
+      line-height: 1.5;
+      color: #333333;
+    }
+
+    .mission-vision {
+      margin-bottom: 20px;
+
+      h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #07905c;
+      }
+    }
+
+    &.open {
+      display: block;
+      animation: fade-in 0.5s ease;
+      z-index: 2;
+    }
+  }
+
+  .cfe-header .dropdown-btn.open {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+
+
+
+
 
