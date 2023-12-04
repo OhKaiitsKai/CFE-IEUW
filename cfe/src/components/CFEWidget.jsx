@@ -8,6 +8,8 @@ const CFEWidget = () => {
   };
 
   return (
+    <div className='cfe-banner'> 
+    <h1 className='cfe-acerca'>Acerca</h1>
     <div className="cfe-widget">
       <div className="cfe-header" style={{ backgroundColor: '#07905c' }}>
         <h2>Comisión Federal de Electricidad</h2>
@@ -24,6 +26,7 @@ const CFEWidget = () => {
           <p>Ser una empresa líder, reconocida por su eficiencia operativa, innovación tecnológica y compromiso con el medio ambiente y la sociedad.</p>
         </div>
       </div>
+    </div>
     </div>
   );
 };
