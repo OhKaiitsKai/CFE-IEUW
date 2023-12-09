@@ -30,7 +30,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* Estilos para el contenedor interno del Header */
+    :any-link{
+      color: #07905c;
+      text-decoration: none;
+    }
 
     .logoh {
       margin-left: 20px;
@@ -295,32 +298,94 @@
   }
 }
 //Navbar
+//Navbar
 .navbar {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #07905c; 
-  padding: 20px; /* Ajusta el padding según tu diseño */
-  border-radius: 10px;
+  background-color: #07905c; /* Color de fondo */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 5px;
 
   .nav-menu {
-    ul {
-      list-style:none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      justify-content: space-around;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-      .nav-item {
-        padding: 10px;
-        color: white;
+    .logonav img {
+      max-width: 130px; /* Tamaño máximo del logo */
+      background-color: white;
+    }
+
+    .nav-part {
+      list-style-type: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+
+      .nav-item, .nav-op {
+        margin-top: 32px;
+        margin-right: 20px; /* Espaciado entre elementos */
         cursor: pointer;
+        transition: color 0.3s ease; /* Transición de color al pasar el mouse */
+
+        &:last-child {
+          margin-right: 0; /* Elimina el margen del último elemento */
+        }
 
         &:hover {
-          text-decoration: underline;
+          color: #333; /* Color al pasar el mouse */
+        }
+      }
+
+      .nav-op {
+        font-weight: bold; /* Estilo diferente para las opciones */
+      }
+    }
+  }
+  
+  @include tablet {
+    /* Styles for tablets (width between 612px and 915px) */
+    padding: 10px;
+    .nav-menu {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .logonav img {
+        max-width: 100px;
+      }
+
+      .nav-part {
+        flex-direction: column;
+        .nav-item, .nav-op {
+          margin-top: 15px;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  @include mobile {
+    /* Styles for mobile (width up to 612px) */
+    padding: 10px;
+    .nav-menu {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .logonav img {
+        max-width: 80px;
+      }
+
+      .nav-part {
+        flex-direction: column;
+        .nav-item, .nav-op {
+          margin-top: 10px;
+          margin-right: 0;
         }
       }
     }
   }
 }
+
+
 
 //Features
 .features {
@@ -411,6 +476,7 @@
     }
   }
 }
+
 //Prefooter
 .prefooter {
   background-color: #757575;
@@ -491,48 +557,98 @@
 }
 
 //Simulador
+$tablet: 915px;
+$laptop: 1200px;
+
 .Simulador {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 30px;
-  color: whitesmoke; /* Color corregido */
+  color: whitesmoke;
   background-color: #07905c;
   justify-content: space-between;
   border-radius: 5px;
   align-items: center;
-  /* Otros estilos para el encabezado o título */
+
+  @include tablet {
+    font-size: 28px;
+  }
+
+  @include mobile {
+    font-size: 28px;
+  }
 }
 
 .SimuladorDesc {
-  font-size: 22px;
-  color: #333; /* Color corregido */
-  /* Otros estilos para la descripción */
+  font-size: 20px;
+  color: #333;
+
+  @include tablet {
+    font-size: 18px;
+  }
+
+  @include mobile {
+    font-size: 18px;
+  }
 }
 
 .Formulario {
   border: solid 2px #5ccb5f;
   border-radius: 5px;
-  margin-top: 20px; /* Agregado margen arriba para separación */
+  margin-top: 20px;
+
+  @include tablet {
+    margin-top: 15px;
+  }
+
+  @include mobile {
+    margin-top: 10px;
+  }
 }
 
 .Consumo,
 .TipoTarifa {
   font-size: 22px;
-  margin-bottom: 15px; /* Agregado margen abajo para separación */
+  margin-bottom: 15px;
+
+  @include tablet {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  @include mobile {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
 }
 
 label {
   display: block;
   margin-bottom: 5px;
+
+  @include tablet {
+    margin-bottom: 3px;
+  }
+
+  @include mobile {
+    margin-bottom: 2px;
+  }
 }
 
 input[type="number"],
 select {
-  //width: 100%;
   padding: 6px;
   margin-right: 2px;
   font-size: 22px;
   border: 1px solid #ccc;
   border-radius: 3px;
+
+  @include tablet {
+    font-size: 16px;
+  }
+
+  @include mobile {
+    font-size: 16px;
+  }
 }
 
 .Costo,
@@ -540,8 +656,17 @@ select {
 .Total {
   font-size: 22px;
   color: #333;
-  margin-top: 20px; /* Agregado margen arriba para separación */
+  margin-top: 20px;
+
+  @include tablet {
+    margin-top: 18px;
+  }
+
+  @include mobile {
+    margin-top: 18px;
+  }
 }
+
 
 //Localización
 .Mapita {
@@ -774,13 +899,13 @@ p {
       align-items: center;
       padding: 10px;
       cursor: pointer;
-      background-color: #f5f5f5;
+      background-color: rgb(237, 240, 237);
       border-radius: 8px;
 
       .accordion-title {
         font-size: 24px;
         margin: 0;
-        color: #5ccb5f;
+        color:#0faa8f;
       }
 
       .icon {

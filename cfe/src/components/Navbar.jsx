@@ -1,18 +1,24 @@
 import React from "react";
+import CFElogo1 from "../img/cfelogotr.png";
 import "../App.scss";
 
 const Navbar = () => {
-  
-
   return (
     <nav className="navbar">
       <div className="nav-menu">
-        <ul>
-          <li className="nav-item">Acerca</li>
-          <li className="nav-item">Servicios</li>
-          <li className="nav-item">Simulador de consumo</li>
-          <li className="nav-item">Localización</li>
-          <li className="nav-item">Contacto</li>
+        <span className="logonav">
+          <img src={CFElogo1} alt="Logo CFE" />
+        </span>
+        <ul className="nav-part">
+          <li className="nav-item">Inicio</li>
+          <li className="nav-item">Pago de Recibo</li>
+          <li className="nav-item">Factura</li>
+          <li className="nav-item">Movimientos</li>
+          <li className="nav-item">Notificaciones</li>
+        </ul>
+        <ul className="nav-part">
+          <li className="nav-op">Ajustes</li>
+          <li className="nav-op">Cerrar sesión</li>
         </ul>
       </div>
     </nav>
@@ -20,3 +26,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

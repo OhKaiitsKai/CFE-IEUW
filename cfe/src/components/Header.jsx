@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import CFElogo3 from "../img/CFE3.jpeg";
 import Menubar from "../img/menu.png";
+import { Link } from 'react-router-dom';
 import "../App.scss";
-
+//
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
 
@@ -21,15 +22,19 @@ const Header = () => {
             <img src={Menubar} alt="Menú" />
           </span>
           <ul className={showMenu ? 'show-menu' : ''}>
-            <li className="headernav-item">Acerca</li>
-            <li className="headernav-item">Servicios</li>
-            <li className="headernav-item">Simulador de consumo</li>
-            <li className="headernav-item">Localización</li>
+            <li className="headernav-item"><Link to="/cfedesc">Acerca</Link></li>
+            <li className="headernav-item"><Link to="/servicios">Servicios</Link></li>
+            <li className="headernav-item"><Link to="/simulator">Simulador de consumo</Link></li>
+            <li className="headernav-item"><Link to="/location">Localización</Link></li>
           </ul>
         </div>
         <div className="LogSignbtns">
-          <button className="LogInbtn">Iniciar sesión</button>
+        <Link to="/signuplogin">
+         <button className="LogInbtn">Iniciar sesión</button>
+          </Link>
+        <Link to="/signuplogin">
           <button className="SignUpbtn">Crear una cuenta</button>
+          </Link>
         </div>
       </div>
     </div>
